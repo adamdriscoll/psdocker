@@ -52,16 +52,6 @@ function Get-DockerImage {
     & $Docker $Arguments | ConvertFrom-Json
 }
 
-function Debug-DockerContainer {
-    param(
-        [Parameter(Mandatory = $true)]
-        $Name
-    )
-
-    $Arguments = @("attach", $Name)
-    & $Docker $Arguments 
-}
-
 function New-DockerContainer {
     [CmdletBinding()]
     param(
